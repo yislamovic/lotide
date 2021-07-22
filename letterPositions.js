@@ -24,16 +24,20 @@ const asserArraysEqual = function (array1, array2) {
   return (!bool.includes(false)) ? "✅Both arrays equal" : "❌The arrays not equal";
 }
 
-const countLetters = function(str){
-  let obj = {};
-  for(let char of str){
-    if (obj[char]) {
-      obj[char] += 1;
-    }
-    else {
-      obj[char] = 1;
+const letterPositions = function (sentence) {
+  let results = {};
+  for (let char of sentence) {
+    for (let i = 0; i < sentence.length; i++) {
+      if(results[char]){
+        if(char === sentence[i] && !results[char].includes(i)){
+          results[char].push(i);
+        }  
+      }
+      else{
+        results[char] = [];
+      }
     }
   }
-  return obj;
-}
-console.log(countLetters('here'));
+  return results;
+};
+console.log(letterPositions('lollmaorofl'));
