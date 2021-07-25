@@ -1,12 +1,35 @@
-const without = function (sourceArray, itemsToRemoveArray) {
-  let newArray = sourceArray;
-  for (let i = 0; i < itemsToRemoveArray.length; i++) {
-    while (newArray.includes(itemsToRemoveArray[i])) {
-      let index = newArray.indexOf(itemsToRemoveArray[i]);
-      newArray.splice(index, 1);
+const assertArraysEqual = function (array1, array2) {
+  let bool = [];
+  for (let i = 0; i < array1.length; i++) {
+    for (let j = 0; j < array2.length; j++) {
+      if (array1[i] === array2[j]) {
+        bool[i] = true;
+      }
+      else {
+        bool[i] = false;
+      }
+      i++;
+    }
+  }
+  return (!bool.includes(false)) ? "✅Both arrays equal" : "❌The arrays not equal";
+}
+
+const without = function(source, itemsToRemove){
+  let newArray = [];
+  for(let i = 0; i < source.length; i++){
+    newArray[i] = source[i];
+  }
+  for(let i = 0; i < itemsToRemove.length; i++){
+    for(let j = 0; j < newArray.length; j++){
+      if(itemsToRemove[i] === newArray[j]){
+        newArray.splice(j, 1);
+      }
     }
   }
   return newArray;
-};
-console.log(without([1, 4, 5, 3], [3, 1]));
-console.log(without([1, 4, 5, 3], [1, 2, '3']));
+}
+const words = ["hello", "world", "lighthouse"];
+
+console.log(without(words, ["lighthouse"])); 
+
+console.log(assertArraysEqual(words, ["hello", "world", "lighthouse"]));
