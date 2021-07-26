@@ -1,19 +1,3 @@
-const assertArraysEqual = function (array1, array2) {
-  let bool = [];
-  for (let i = 0; i < array1.length; i++) {
-    for (let j = 0; j < array2.length; j++) {
-      if (array1[i] === array2[j]) {
-        bool[i] = true;
-      }
-      else {
-        bool[i] = false;
-      }
-      i++;
-    }
-  }
-  return (!bool.includes(false)) ? "✅Both arrays equal" : "❌The arrays not equal";
-}
-
 const without = function(source, itemsToRemove){
   let newArray = [];
   for(let i = 0; i < source.length; i++){
@@ -28,8 +12,4 @@ const without = function(source, itemsToRemove){
   }
   return newArray;
 }
-const words = ["hello", "world", "lighthouse"];
-
-console.log(without(words, ["lighthouse"])); 
-
-console.log(assertArraysEqual(words, ["hello", "world", "lighthouse"]));
+module.exports = without;
