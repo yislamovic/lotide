@@ -1,4 +1,4 @@
-const asserArraysEqual = function (array1, array2) {
+const assertArraysEqual = function (array1, array2) {
   let bool = [];
   for (let i = 0; i < array1.length; i++) {
     for (let j = 0; j < array2.length; j++) {
@@ -13,5 +13,4 @@ const asserArraysEqual = function (array1, array2) {
   }
   return (!bool.includes(false)) ? "✅Both arrays equal" : "❌The arrays not equal";
 }
-console.log(asserArraysEqual([1,2],[1,2]));
-console.log(asserArraysEqual([1,2],[1,"2"]));
+module.exports = assertArraysEqual;

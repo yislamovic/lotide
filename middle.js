@@ -1,45 +1,3 @@
-const assertEqual = function (actual, expected) {
-  let string = '';
-  if (actual === expected) {
-    string = console.log(`✅Assertion Passed: [${actual}] === [${expected}]`);
-  } else {
-    string = console.log(`❌Assertion Failed: [${actual}] === [${expected}]`);
-  }
-  return string;
-};
-
-const eqArrays = function (array1, array2) {
-  let bool = [];
-  for (let i = 0; i < array1.length; i++) {
-    for (let j = 0; j < array2.length; j++) {
-      if (array1[i] === array2[j]) {
-        bool[i] = true;
-      }
-      else {
-        bool[i] = false;
-      }
-      i++;
-    }
-  }
-  return !bool.includes(false);
-}
-
-const asserArraysEqual = function (array1, array2) {
-  let bool = [];
-  for (let i = 0; i < array1.length; i++) {
-    for (let j = 0; j < array2.length; j++) {
-      if (array1[i] === array2[j]) {
-        bool[i] = true;
-      }
-      else {
-        bool[i] = false;
-      }
-      i++;
-    }
-  }
-  return (!bool.includes(false)) ? "✅Both arrays equal" : "❌The arrays not equal";
-}
-
 const middle = function (array) {
   let newArray = [];
   if (array.length <= 2) {
@@ -65,10 +23,6 @@ const middle = function (array) {
   }
   return newArray;
 }
+module.exports = middle;
 
-console.log(middle([9, 2, 8, 4, -1, 10]));//even; returns [8, 4]
-console.log(asserArraysEqual([9, 2, 8, 4, -1, 10], middle([9, 2, 8, 4, -1, 10])));
-console.log('\n');
 
-console.log(middle([1, 1, 3, 9, -7, 10, -3, -9, 4, 5, 4]));// odd; returns [10]
-console.log(asserArraysEqual([1, 1, 3, 9, 0, 1, -3, -9, 4, 5, 4], middle([1, 1, 3, 9, 0, 1, -3, -9, 4, 5, 4])));
