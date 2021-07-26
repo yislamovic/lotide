@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "yahyalighthouselotide",
   "version": "1.0.0",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -16,11 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/yislamovic/lotide.git"
   },
-  "author": "",
+  "author": "Yahya Islamovic",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yislamovic/lotide/issues"
   },
   "homepage": "https://github.com/yislamovic/lotide#readme",
-  "description": ""
+  "description": "This is a school practice package that trys to recreate some of the functions in lotide."
 }
